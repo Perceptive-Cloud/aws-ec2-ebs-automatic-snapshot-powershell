@@ -72,13 +72,17 @@ Default output format: (Enter "text".)
 
 1) [Download the scripts from Github] (https://github.com/CaseyLabs/aws-ec2-ebs-automatic-snapshot-powershell/archive/master.zip)
 
-2) Extract the zip contents to **C:\aws** on your Windows Server
+2) Extract the zip contents to **C:\ebs-snapshot** on your Windows Server
 
 3) Next, open Task Scheduler on the server, and create a new task that runs:
 ```
-powershell.exe -ExecutionPolicy Bypass -file "C:\aws\1-start-ebs-snapshot.ps1"
+powershell.exe -ExecutionPolicy Bypass -file "C:\ebs-snapshot\1-start-ebs-snapshot.ps1"
 ```
 ...on a nightly basis.
+
+Run
+```
+schtasks.exe /Create /XML "C:\ebs-snapshot\EC2_EBS_Backup.xml" /TN "EC2 EBS Backup" /RU backerupper
 
 ===================================
 
@@ -88,6 +92,6 @@ If you setup the AWS CLI under a Windows user account other than the local Admin
 
 For example, let's say that you've configured the AWS CLI credentials under the Windows user account "myadmin". You will need to:
 
-- Open C:\aws\2-run-backup.cmd in Notepad
+- Open C:\ebs-snapshot\2-run-backup.cmd in Notepad
 - Change "set USERPROFILE=C:\Users\Administrator\" to "set USERPROFILE=C:\Users\myadmin\"
 - Save and exit.
