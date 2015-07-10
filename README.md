@@ -50,9 +50,12 @@ Pull requests greatly welcomed!
 }
 ```
 <br />
+**CREATE backerupper USER**
+This script should run under a dedicated local account. This account needs to be in the local Administrator group in order to run diskshadow. I'd recommend an account called backerupper. This account also needs to have the keys for the backerupper AWS account set up.
+
 **AWS CLI:** This script requires the AWS CLI tools to be installed on the target Windows instance.  
 
-- Log into your Windows instance with your local Administrator account.
+- Log into your Windows instance with your local backerupper account.
 
 - Download the Windows installer for AWS CLI at: [https://aws.amazon.com/cli/] (https://aws.amazon.com/cli/)
 
@@ -68,6 +71,7 @@ Default output format: (Enter "text".)
 ```
 
 <br />
+
 **INSTALL SCRIPT AS A SCHEDULED TASK**
 
 1) [Download the scripts from Github] (https://github.com/CaseyLabs/aws-ec2-ebs-automatic-snapshot-powershell/archive/master.zip)
