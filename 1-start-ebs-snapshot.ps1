@@ -9,8 +9,8 @@
 Set-StrictMode -Version Latest
 
 # User variables: Set file locations
-$diskshadowscript = "C:\aws\diskshadow.txt"
-$runbackupscript = "C:\aws\2-run-backup.cmd"
+$diskshadowscript = "C:\ebs-backup\diskshadow.txt"
+$runbackupscript = "C:\ebs-backup\2-run-backup.cmd"
 
 # Global Variables
 $nl = [Environment]::NewLine
