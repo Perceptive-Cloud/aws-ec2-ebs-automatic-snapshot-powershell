@@ -2,7 +2,7 @@
 <Task version="1.4" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
   <RegistrationInfo>
     <Author>backerupper</Author>
-    <Description>Backs up all EBS volumes on this server.</Description>
+    <Description>Takes a snapshot of all EBS volumes on this server.</Description>
   </RegistrationInfo>
   <Triggers>
     <CalendarTrigger>
@@ -44,7 +44,7 @@
   <Actions>
     <Exec>
       <Command>powershell</Command>
-      <Arguments>-ExecutionPolicy bypass -file "c:\ebs-backup\1-start-ebs-snapshot.ps1"</Arguments>
+      <Arguments>-ExecutionPolicy bypass -file "c:\ebs-snapshot\1-start-ebs-snapshot.ps1"</Arguments>
     </Exec>
   </Actions>
 </Task>
